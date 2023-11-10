@@ -20,35 +20,30 @@ let ws=null;
             // progressColor: '#383351',
             waveColor: 'rgb(200, 0, 200)',
             progressColor: 'rgb(100, 0, 100)',
+
            // media:document.querySelector('video')
-           media:document.querySelector('#video')
+           media:document.querySelector('#video'),
+          
             
           })
 
           setWavesurfer(ws);
         }
 
+     
        
     
 
     },[media])
 
 
-    useEffect(()=>{
-     
-     
-      return()=>{
-      if(wavesurfer)
-     
-      wavesurfer.destroy();
-    }
-    },[vidRef])
+  
 
 
 
    
   
-      //setWavesurfer(wave)
+   
   return (
     <div
     className='waveform'

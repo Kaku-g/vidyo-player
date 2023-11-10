@@ -105,8 +105,7 @@ const VideoPlayer = ({ }) => {
     const canvas = canvasRef.current;
 
     
-  // setWavesurfer(document.querySelector('#video'))
-  // console.log(wavesurfer,document.querySelector('video'))
+
 
     const video = videoRef.current;
 
@@ -115,13 +114,7 @@ const VideoPlayer = ({ }) => {
 
 
     
-    // if(!hasAudio(videoRef.current)){
-    //   alert('no audio file found!!');
-    //   return;
-    //   //window.location.reload()
-    //  }
-
-    //video.play();
+  
     const ctx = canvas.getContext('2d');
 
     video.onloadedmetadata = (event) => {
@@ -189,16 +182,8 @@ console.log(file);
       //console.log(videoUrl) 
        setCurrentVideoSource(videoUrl);
      
-       
- 
        setChanging(false);
 
-     
-      
-
-
-  
-   
      }
    if(currentVideoSource)
    {
@@ -206,7 +191,6 @@ console.log(file);
     console.log(audio)
    }
      
-    
   }
   const handlePlay=(e)=>{
       if(playing){
@@ -235,14 +219,17 @@ console.log(file);
             <canvas
             
             onMouseOver={handleCanvasHover}
-            // onMouseLeave={()=>handleCanvasLeave}
+          
               crossOrigin='anonymous' ref={canvasRef} style={{width:'600px',height:'500px'}}></canvas>
       <video id='video' crossOrigin='anonymous' src={currentVideoSource} ref={videoRef} autoPlay={true} controls={true} style={{display:'none'}}  >
        
        
       </video>
       < div className='playBtn'
-        >{playing ? <img  style={{display:showPlayButton?'block':'none'}}  onClick={handlePlay} src={Pause} alt="" />:<img  style={{display:showPlayButton?'block':'none'}} onClick={handlePlay} src={Play}/>}</div>
+        >
+          {currentVideoSource && playing ? <img  style={{display:showPlayButton?'block':'none'}}  onClick={handlePlay} src={Pause}  />:<img  style={{display:showPlayButton?'block':'none'}} onClick={handlePlay} src={Play}/> }
+          </div>
+          
             </div>
          
          <div className='meta-container'>
