@@ -1,7 +1,5 @@
-import logo from "./logo.svg";
 import "./App.css";
 import VideoPlayer from "./components/Player/Player";
-import NewPlayer from "./components/NewPlayer";
 
 function App() {
   return (
@@ -9,8 +7,6 @@ function App() {
       <div>
         <VideoPlayer />
       </div>
-
-      {/* <NewPlayer /> */}
     </div>
   );
 }
